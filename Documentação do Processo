@@ -1,0 +1,70 @@
+
+
+# Migração de Banco de Dados SQL Server para Azure SQL Database
+
+Este projeto documenta o processo de migração de um sistema legado baseado em SQL Server para a plataforma de nuvem Azure SQL Database. O objetivo é alcançar escalabilidade e redução de custos operacionais através da migração para a nuvem.
+
+## Etapas da Migração
+
+### 1. Avaliação e Planejamento
+
+#### Ferramenta: Data Migration Assistant (DMA)
+
+1. **Instalação do DMA**
+   - Baixe e instale o [Data Migration Assistant](https://aka.ms/dma).
+   
+2. **Criação de Projeto de Avaliação**
+   - Abra o DMA.
+   - Clique em "New" para criar um novo projeto.
+   - Selecione "Assessment" como tipo de projeto.
+   - Conecte-se ao seu servidor SQL Server.
+   - Selecione os bancos de dados a serem avaliados.
+   - Execute a avaliação para identificar possíveis problemas de compatibilidade.
+   
+3. **Correção de Incompatibilidades**
+   - Revise o relatório gerado pelo DMA.
+   - Corrija quaisquer problemas de compatibilidade encontrados.
+
+### 2. Preparação do Ambiente
+
+#### Backup do Banco de Dados
+
+1. **Realize um Backup Completo**
+   - Execute o script `backup.sql` para fazer um backup completo do banco de dados SQL Server.
+
+### 3. Configuração do Azure SQL Database
+
+#### Criação do Banco de Dados no Azure
+
+1. **Criar uma Nova Instância do Azure SQL Database**
+   - No Azure Portal, navegue até o serviço "Azure SQL".
+   - Clique em "Criar".
+   - Preencha as informações necessárias, como nome do banco de dados, servidor, etc.
+   - Selecione o nível de desempenho adequado.
+   
+2. **Configuração do Azure Database Migration Service (DMS)**
+   - No Azure Portal, configure o Azure Database Migration Service.
+   - Navegue até "Azure Database Migration Services".
+   - Clique em "Criar".
+   - Preencha as informações e crie o serviço.
+
+### 4. Migração dos Dados
+
+#### Utilizando o Azure Database Migration Service (DMS)
+
+1. **Configurar o Projeto de Migração**
+   - No DMS, crie um novo projeto de migração.
+   - Selecione "Online data migration" ou "Offline data migration".
+   - Conecte-se ao servidor SQL Server de origem.
+   - Conecte-se ao Azure SQL Database de destino.
+   - Selecione os bancos de dados a serem migrados.
+   
+2. **Iniciar a Migração**
+   - Execute o script `migration.ps1` para iniciar a migração.
+
+### 5. Pós-Migração
+
+#### Validação e Otimização
+
+1. **Validação de Dados**
+   - Verifique se todos os dados foram migrados corretamente.
