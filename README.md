@@ -1,4 +1,4 @@
-# Documento de Migração de Banco de Dados: SQL Server para Azure SQL Database
+# SQL Server para Azure SQL Database
 
 ## Visão Geral
 
