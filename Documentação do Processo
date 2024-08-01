@@ -1,5 +1,5 @@
 
-
+'''
 # Migração de Banco de Dados SQL Server para Azure SQL Database
 
 Este projeto documenta o processo de migração de um sistema legado baseado em SQL Server para a plataforma de nuvem Azure SQL Database. O objetivo é alcançar escalabilidade e redução de custos operacionais através da migração para a nuvem.
@@ -68,3 +68,4 @@ Este projeto documenta o processo de migração de um sistema legado baseado em 
 
 1. **Validação de Dados**
    - Verifique se todos os dados foram migrados corretamente.
+'''
